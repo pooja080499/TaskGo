@@ -255,22 +255,17 @@
 
 // export default DashboardPage;
 
-
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
 import TaskChart from '../components/TaskChart';
 import '../styles/DashboardPage.css';
-// import '../styles/TaskForm.css';
-// import '../styles/TaskList.css';
 
-function DashboardPage() {
-  const [tasks, setTasks] = useState([]);
+function DashboardPage({ tasks, setTasks }) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [isFormVisible, setIsFormVisible] = useState(false);
-  const [statusFilter, setStatusFilter] = useState('all'); // Filter by status (All, Pending, Overdue, Complete)
-  const [priorityFilter, setPriorityFilter] = useState('all'); // Filter by priority (High, Medium, Low)
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [priorityFilter, setPriorityFilter] = useState('all');
 
   // Filter tasks based on search query, status, and priority
   const filteredTasks = tasks.filter(
@@ -284,11 +279,6 @@ function DashboardPage() {
   // Handle search input change from Header
   const handleSearch = (query) => {
     setSearchQuery(query);
-  };
-
-  // Toggle task form visibility
-  const toggleTaskForm = () => {
-    setIsFormVisible(!isFormVisible);
   };
 
   // Handle filter changes
@@ -312,10 +302,7 @@ function DashboardPage() {
       <div className="dashboard-content">
         {/* Left Section */}
         <div className="left-section">
-          {/* Task Form */}
           <TaskForm tasks={tasks} setTasks={setTasks} />
-          
-          {/* Filter Section */}
           <div className="filters">
             <div>
               <label>Filter by Status:</label>
@@ -326,7 +313,6 @@ function DashboardPage() {
                 <option value="complete">Complete</option>
               </select>
             </div>
-
             <div>
               <label>Filter by Priority:</label>
               <select onChange={(e) => handlePriorityFilterChange(e.target.value)} value={priorityFilter}>
@@ -360,6 +346,7 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
+
 
 
 

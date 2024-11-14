@@ -81,18 +81,17 @@
   left: 0;
   right: 0;
   padding: 16px;
-  background-color: #f0f8ff;
+  background-color: #f2f5f8;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 
 /* Form input fields */
-.edit-form input,
-.edit-form select,
-.edit-form textarea {
+.edit-form input
+ {
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 12px;
   font-size: 16px;
@@ -100,6 +99,34 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form textarea{
+  
+    display: block;
+    width: 90.1%;
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  
+  }
+
+
+.edit-form select{
+  display: block;
+  width: 93%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Save and cancel button styling */

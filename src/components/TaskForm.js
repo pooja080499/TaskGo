@@ -34,7 +34,9 @@
 
 
 import React, { useState } from 'react';
-import '../styles/TaskForm.css'; // Make sure the CSS is applied for styling
+import '../styles/TaskForm.css';
+
+
 
 function TaskForm({ tasks, setTasks }) {
   const [title, setTitle] = useState('');
@@ -44,7 +46,9 @@ function TaskForm({ tasks, setTasks }) {
 
   const handleAddTask = () => {
     if (title && description && date && priority) {
-      setTasks([...tasks, { title, description, date, priority, status: 'pending' }]);
+      const newTask = { title, description, date, priority, status: 'pending' };
+      const updatedTasks = [...tasks, newTask];
+      setTasks(updatedTasks); // This will trigger the local storage update in App component
       setTitle('');
       setDescription('');
       setDate('');
@@ -53,8 +57,6 @@ function TaskForm({ tasks, setTasks }) {
       alert('Please fill in all fields');
     }
   };
-
- 
 
   return (
     <div className="task-form-container">
@@ -98,4 +100,5 @@ function TaskForm({ tasks, setTasks }) {
 }
 
 export default TaskForm;
+
 
