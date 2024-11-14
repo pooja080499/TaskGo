@@ -79,12 +79,12 @@ function TaskList({ tasks, setTasks }) {
 
   return (
     <div className="task-list">
-      <div className="filters">
+      {/* <div className="filters">
         <button onClick={() => setFilter('all')}>All</button>
         <button onClick={() => setFilter('pending')}>Pending</button>
         <button onClick={() => setFilter('overdue')}>Overdue</button>
         <button onClick={() => setFilter('complete')}>Complete</button>
-      </div>
+      </div> */}
       {filteredTasks.map((task, index) => (
         <div key={index} className={`task-item ${task.status}`}>
           <h3>{task.title}</h3>

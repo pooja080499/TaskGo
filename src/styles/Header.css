@@ -2,7 +2,9 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: #f5f5f5;
+    background-color: #081d43;
+    color: rgb(248, 241, 241);
+    font-weight: 700;
   }
   
   .search-bar {

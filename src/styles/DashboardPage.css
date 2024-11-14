@@ -1,4 +1,4 @@
-/* General Dashboard Layout */
+  /* General Dashboard Layout */
 .dashboard-container {
   display: flex;
   flex-direction: column;
@@ -26,8 +26,8 @@
 
 .header-left img {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 10px;
+  height: 10px;
   margin-right: 10px;
 }
 
@@ -323,7 +323,8 @@
 
 /* Left Section - Add Task Form and Filters */
 .left-section {
-  flex: 1;
+  width:30%;
+  flex: 1.5;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -371,10 +372,11 @@
 
 /* Middle Section - Task Stats and Task List */
 .middle-section {
-  flex: 2;
+  width:50%;
+  flex: 2.5;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .task-summary {
@@ -393,11 +395,12 @@
 
 /* Right Section - Task Chart */
 .right-section {
-  flex: 1;
+  width:20%;
+  flex: 0.3;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -414,5 +417,13 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+.profile {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 10px; /* Space between image and text */
+  object-fit: cover; /* Ensures the image fills the circle without distortion */
 }
 

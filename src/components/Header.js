@@ -20,7 +20,9 @@
 
 
 import React, { useState } from 'react';
-
+// Import the profile image from the assets folder
+import profileImage from '../assets/profile.jpg';
+import "../styles/Header.css";
 
 function Header({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -36,9 +38,10 @@ function Header({ onSearch }) {
   return (
     <header className="header">
       <div className="left">
-        <img src='lets-manage-task/src/assets/profile.jpg' alt="Profile" className="profile" /> TaskFlow
+        {/* Use the imported image variable here */}
+        <img src={profileImage} alt="Profile" className="profile"  /> TaskFlow
       </div>
-      <div className="center">
+      <div className="search-bar">
         <input
           type="text"
           placeholder="Search tasks..."

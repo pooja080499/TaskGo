@@ -1,5 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import "../styles/TaskChart.css";
 
 function TaskChart({ tasks }) {
   const statusCounts = {
