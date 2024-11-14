@@ -1,44 +1,139 @@
+/* General styling for the task list container */
 .task-list {
-    margin-top: 20px;
-    /* background-color: RED; */
-    /* display: grid; */
-  }
-  
-  /* .filters button {
-    margin-right: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-   */
-  .task-item {
-    /* border: 1px solid #ddd; */
-    padding: 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    display: flex;
-  }
-  
-  
-  .task-item.complete {
-    background-color: #e0ffe0;
-  }
-  
-  .task-item.pending {
-    background-color: #fff0e0;
-  }
-  
-  .task-item.overdue {
-    background-color: #ffe0e0;
-  }
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .btn{
-    display: grid;
-    gap: 5px;
-    
-  }
+/* Task item styling */
+.task-item {
+  padding: 16px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
 
-  .task-item button{
-    border-radius: 2px;
-    /* background-color: aqua; */
-  }
-  
+/* Different colors for task statuses */
+.task-item.pending {
+  background-color: #fff9e6;
+}
+
+.task-item.overdue {
+  background-color: #ffe6e6;
+}
+
+.task-item.complete {
+  background-color: #e6ffe6;
+}
+
+/* Task item header styling */
+.task-item h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.task-item p {
+  margin: 8px 0;
+  color: #666;
+}
+
+/* Button styling */
+.task-item .btn {
+  margin-top: 10px;
+}
+
+.task-item .btn button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-item .btn button:first-child {
+  background-color: #4CAF50; /* Green for Mark as Complete */
+}
+
+.task-item .btn button:nth-child(2) {
+  background-color: #007BFF; /* Blue for Edit */
+}
+
+.task-item .btn button:last-child {
+  background-color: #FF4136; /* Red for Delete */
+}
+
+.task-item .btn button:hover {
+  opacity: 0.9;
+}
+
+/* Edit form styling (appears over the task item) */
+.edit-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Form input fields */
+.edit-form input,
+.edit-form select,
+.edit-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Save and cancel button styling */
+.edit-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Save button */
+.edit-form button[type="submit"] {
+  background-color: #4CAF50;
+  margin-right: 10px;
+}
+
+.edit-form button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Cancel button */
+.edit-form button[type="button"] {
+  background-color: #FF4136;
+}
+
+.edit-form button[type="button"]:hover {
+  background-color: #e03a2d;
+}
+
+
+.item-content{
+  padding:10px;
+
+}
