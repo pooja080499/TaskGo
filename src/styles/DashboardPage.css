@@ -308,3 +308,111 @@
 .dashboard-content > div {
   margin-top: 20px;
 }
+
+
+
+/* General Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Left Section - Add Task Form and Filters */
+.left-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-section .add-task-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.left-section .add-task-button:hover {
+  background-color: #45a049;
+}
+
+/* Filter Section */
+.filters {
+  margin-top: 20px;
+}
+
+.filters div {
+  margin-bottom: 15px;
+}
+
+.filters label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.filters select {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* Middle Section - Task Stats and Task List */
+.middle-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-summary {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-summary div {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Right Section - Task Chart */
+.right-section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters {
+    display: block;
+  }
+
+  .task-summary {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
