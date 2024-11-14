@@ -42,7 +42,6 @@
 
 // export default TaskList;
 
-
 import React, { useState, useEffect } from 'react';
 import "../styles/TaskList.css";
 
@@ -105,11 +104,9 @@ function TaskList({ tasks, setTasks }) {
     <div className="task-list">
       {filteredTasks.map((task, index) => (
         <div key={index} className={`task-item ${task.status}`}>
-          {/* If the item is in edit mode, show the edit form */}
           {isEditing && editIndex === index ? (
             <form className="edit-form" onSubmit={handleEditSubmit}>
               <h3>Edit Task</h3>
-              
               <input
                 type="text"
                 name="title"
@@ -156,13 +153,12 @@ function TaskList({ tasks, setTasks }) {
               <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
             </form>
           ) : (
-            // Display the task item normally when not editing
             <>
-              <div class="item-content">
-                <h3>  Title: {task.title}</h3>
-                <p>   Description:{task.description}</p>
-                <p>   Due: {task.date}</p>
-                <p>   Status:  <strong>{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</strong></p>
+              <div className="item-content">
+                <h3>Title: {task.title}</h3>
+                <p>Description: {task.description}</p>
+                <p>Due: {task.date}</p>
+                <p>Status: <strong>{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</strong></p>
               </div>
               <div className="btn">
                 <button onClick={() => markTaskComplete(index)} disabled={task.status === 'complete'}>
@@ -180,5 +176,6 @@ function TaskList({ tasks, setTasks }) {
 }
 
 export default TaskList;
+
 
 

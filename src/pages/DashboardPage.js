@@ -262,6 +262,8 @@ import TaskList from '../components/TaskList';
 import TaskChart from '../components/TaskChart';
 import '../styles/DashboardPage.css';
 
+
+
 function DashboardPage({ tasks, setTasks }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -341,7 +343,17 @@ function DashboardPage({ tasks, setTasks }) {
           <TaskChart tasks={tasks} />
         </div>
       </div>
+      <div>
+<h1>Dashboard</h1>
+{/* Passing tasks and setTasks to TaskForm */}
+<TaskForm tasks={tasks} setTasks={setTasks} />
+{/* Passing tasks and setTasks to TaskList */}
+<TaskList tasks={tasks} setTasks={setTasks} />
+</div>
     </div>
+
+
+    
   );
 }
 
