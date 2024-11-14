@@ -1,9 +1,11 @@
+// Header.js
 import React, { useState } from 'react';
-// Import the profile image from the assets folder
 import profileImage from '../assets/profile.jpg';
+import StatusFilter from './StatusFilter';
+import PriorityFilter from './PriorityFilter';
 import "../styles/Header.css";
 
-function Header({ onSearch }) {
+function Header({ onSearch, onStatusFilterChange, onPriorityFilterChange, statusFilter, priorityFilter }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Handle search input change
@@ -18,8 +20,8 @@ function Header({ onSearch }) {
     <header className="header">
       <div className="left">
         {/* Use the imported image variable here */}
-        <img src={profileImage} alt="Profile" className="profile"  />
-        <span>TaskFlow</span> 
+        <img src={profileImage} alt="Profile" className="profile" />
+        <span>TaskFlow</span>
       </div>
       <div className="search-bar">
         <input
@@ -29,10 +31,17 @@ function Header({ onSearch }) {
           onChange={handleSearchChange}
         />
       </div>
-      <div className='filter'>
-
+      <div className="filters">
+        {/* Filter Components */}
+        <StatusFilter 
+          statusFilter={statusFilter} 
+          onStatusFilterChange={onStatusFilterChange} 
+        />
+        <PriorityFilter 
+          priorityFilter={priorityFilter} 
+          onPriorityFilterChange={onPriorityFilterChange} 
+        />
       </div>
-      
       <div className="right">
         <span>About</span> | <span>Help</span>
       </div>
@@ -41,4 +50,3 @@ function Header({ onSearch }) {
 }
 
 export default Header;
-

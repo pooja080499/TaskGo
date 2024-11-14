@@ -1,62 +1,64 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #0f2a5d;
-    color: rgb(248, 241, 241);
-    font-weight: 700;
-    
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #0f2a5d;
+  color: rgb(248, 241, 241);
+  font-weight: 700;
+}
 
-  .left{
-    font-weight: 700;
-    /* background-color: red; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-    font-size: xx-large;
-  }
+.left {
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: xx-large;
+}
 
-  .left span{
-    /* background-color: red; */
-    /* margin-top: 5px; */
-  }
+.left span {
+  /* Any additional styling for the text can go here */
+}
 
-  .profile {
-    width: 50px; /* Adjust size as needed */
-    height: 50px;
-    border-radius: 50%; /* Makes the image circular */
-    margin-right: 8px; /* Space between image and text */
-    object-fit: cover; /* Ensures the image fills the circle without distortion */
-  }
-  
-  .search-bar {
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .search-bar input {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: all 0.3s ease;
-  }
-  
-  .search-bar input:focus {
-    border-color: #3498db;
-  }
-  
-  .search-bar input::placeholder {
-    color: #aaa;
-  }
+.profile {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 8px; /* Space between image and text */
+  object-fit: cover; /* Ensures the image fills the circle without distortion */
+}
 
-  .right{
-    margin-right: 5px;
-    font-size: large;
-  }
-  
+.search-bar {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #3498db;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.filters {
+  display: flex;
+  gap: 30px; /* Increased gap between StatusFilter and PriorityFilter */
+  align-items: center; /* Aligns filters vertically centered */
+}
+
+.right {
+  margin-right: 5px;
+  font-size: large;
+}

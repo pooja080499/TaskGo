@@ -44,12 +44,15 @@
 
 /* Button styling */
 .task-item .btn {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Add space between buttons */
+  align-items: flex-start; /* Align buttons to the left */
   margin-top: 10px;
 }
 
 .task-item .btn button {
   padding: 8px 16px;
-  margin-right: 8px;
   font-size: 14px;
   color: #fff;
   border: none;
@@ -88,8 +91,7 @@
 }
 
 /* Form input fields */
-.edit-form input
- {
+.edit-form input {
   display: block;
   width: 90%;
   padding: 10px;
@@ -101,22 +103,19 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-.edit-form textarea{
-  
-    display: block;
-    width: 90.1%;
-    padding: 10px;
-    margin-bottom: 12px;
-    font-size: 16px;
-    color: #333;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  
-  }
+.edit-form textarea {
+  display: block;
+  width: 90.1%;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
 
-
-.edit-form select{
+.edit-form select {
   display: block;
   width: 93%;
   padding: 10px;
@@ -126,7 +125,6 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-
 }
 
 /* Save and cancel button styling */
@@ -159,8 +157,7 @@
   background-color: #e03a2d;
 }
 
-
-.item-content{
-  padding:10px;
-
+/* Task item content section */
+.task-item .task-item-content {
+  padding: 10px;
 }

@@ -10,13 +10,17 @@ function App() {
 
   // Load tasks from localStorage on initial load
   useEffect(() => {
-    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    setTasks(storedTasks);
+    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (storedTasks) {
+      setTasks(storedTasks); // Set the tasks if there are any in localStorage
+    }
   }, []);
 
   // Save tasks to localStorage whenever `tasks` state changes
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    if (tasks.length > 0) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
   }, [tasks]);
 
   return (
@@ -26,10 +30,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage tasks={tasks} setTasks={setTasks} />} />
       </Routes>
     </Router>
-    
   );
-  
 }
 
 export default App;
-
