@@ -1,0 +1,15 @@
+.welcome-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/task-image.jpg'); /* Replace with an image */
+    background-size: cover;
+  }
+  
+  .welcome-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
