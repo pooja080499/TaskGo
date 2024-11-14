@@ -255,7 +255,6 @@
 
 // export default DashboardPage;
 
-
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import TaskForm from '../components/TaskForm';
@@ -266,11 +265,16 @@ import '../styles/TaskForm.css';
 import '../styles/TaskList.css';
 
 function DashboardPage() {
+
+ 
+
   const [tasks, setTasks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [statusFilter, setStatusFilter] = useState('all'); // Filter by status (All, Pending, Overdue, Complete)
   const [priorityFilter, setPriorityFilter] = useState('all'); // Filter by priority (High, Medium, Low)
+
+
 
   // Filter tasks based on search query, status, and priority
   const filteredTasks = tasks.filter(
@@ -362,5 +366,9 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
+
+
+
+
 
 

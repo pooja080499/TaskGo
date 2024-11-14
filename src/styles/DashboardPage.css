@@ -123,7 +123,7 @@
 .left-section .task-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .left-section .task-form input,
