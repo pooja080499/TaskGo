@@ -1,18 +1,21 @@
 .task-list {
     margin-top: 20px;
+    /* background-color: RED; */
+    /* display: grid; */
   }
   
-  .filters button {
+  /* .filters button {
     margin-right: 10px;
     padding: 5px 10px;
     cursor: pointer;
   }
-  
+   */
   .task-item {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     padding: 15px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border-radius: 5px;
+    display: flex;
   }
   
   .task-item.complete {
@@ -25,5 +28,16 @@
   
   .task-item.overdue {
     background-color: #ffe0e0;
+  }
+
+  .btn{
+    display: grid;
+    gap: 5px;
+    
+  }
+
+  .task-item button{
+    border-radius: 2px;
+    /* background-color: aqua; */
   }
   

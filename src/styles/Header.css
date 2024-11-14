@@ -2,9 +2,33 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: #081d43;
+    background-color: #0f2a5d;
     color: rgb(248, 241, 241);
     font-weight: 700;
+    
+  }
+
+  .left{
+    font-weight: 700;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: xx-large;
+  }
+
+  .left span{
+    /* background-color: red; */
+    /* margin-top: 5px; */
+  }
+
+  .profile {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 8px; /* Space between image and text */
+    object-fit: cover; /* Ensures the image fills the circle without distortion */
   }
   
   .search-bar {
@@ -29,5 +53,10 @@
   
   .search-bar input::placeholder {
     color: #aaa;
+  }
+
+  .right{
+    margin-right: 5px;
+    font-size: large;
   }
   

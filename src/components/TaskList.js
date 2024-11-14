@@ -44,6 +44,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import "../styles/TaskList.css";
 
 function TaskList({ tasks, setTasks }) {
   const [filter, setFilter] = useState('all');
@@ -87,12 +88,18 @@ function TaskList({ tasks, setTasks }) {
       </div> */}
       {filteredTasks.map((task, index) => (
         <div key={index} className={`task-item ${task.status}`}>
-          <h3>{task.title}</h3>
-          <p>{task.description}</p>
-          <p>Due: {task.date}</p>
-          <p>Status: <strong>{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</strong></p>
-          <button onClick={() => markTaskComplete(index)} disabled={task.status === 'complete'}>Mark as Complete</button>
-          <button onClick={() => deleteTask(index)}>Delete</button>
+          <div>
+            <h3>Title: {task.title}</h3>
+            <p>Description: {task.description}</p>
+            <p>Due: {task.date}</p>
+            <p>Status: <strong>{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</strong></p>
+          </div>
+          <div className='btn'>
+            <button onClick={() => markTaskComplete(index)} disabled={task.status === 'complete'}>Mark as Complete</button>
+            <button onClick={() => deleteTask(index)}>Edit</button>
+            <button onClick={() => deleteTask(index)}>Delete</button>
+          </div>
+          
         </div>
       ))}
     </div>

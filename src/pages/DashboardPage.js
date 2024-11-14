@@ -255,26 +255,22 @@
 
 // export default DashboardPage;
 
+
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
 import TaskChart from '../components/TaskChart';
 import '../styles/DashboardPage.css';
-import '../styles/TaskForm.css';
-import '../styles/TaskList.css';
+// import '../styles/TaskForm.css';
+// import '../styles/TaskList.css';
 
 function DashboardPage() {
-
- 
-
   const [tasks, setTasks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [statusFilter, setStatusFilter] = useState('all'); // Filter by status (All, Pending, Overdue, Complete)
   const [priorityFilter, setPriorityFilter] = useState('all'); // Filter by priority (High, Medium, Low)
-
-
 
   // Filter tasks based on search query, status, and priority
   const filteredTasks = tasks.filter(
@@ -316,10 +312,8 @@ function DashboardPage() {
       <div className="dashboard-content">
         {/* Left Section */}
         <div className="left-section">
-          <button className="add-task-button" onClick={toggleTaskForm}>
-            Add New Task
-          </button>
-          {isFormVisible && <TaskForm tasks={tasks} setTasks={setTasks} />}
+          {/* Task Form */}
+          <TaskForm tasks={tasks} setTasks={setTasks} />
           
           {/* Filter Section */}
           <div className="filters">
@@ -366,7 +360,6 @@ function DashboardPage() {
 }
 
 export default DashboardPage;
-
 
 
 
