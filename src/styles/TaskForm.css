@@ -1,43 +1,41 @@
-.task-form input,
-.task-form select,
+/* .task-form input,
+.task-form select, */
 .task-form textarea {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.task-form input:focus,
+/* .task-form input:focus,
 .task-form select:focus,
 .task-form textarea:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
-}
+} */
 
 .task-form textarea {
     resize: vertical;
     min-height: 80px;
 }
 
-.task-form button {
+/* .task-form button {
     padding: 12px;
     font-size: 16px;
     color: #fff;
     background-color: #3498db;
     border: none;
-    border-radius: 8px;
+    border-radius: 2px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
-}
+} */
 
-.task-form button:hover {
+/* .task-form button:hover {
     background-color: #2980b9;
     box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
-}
+} */
 
 .task-form label {
     font-weight: 500;
@@ -46,21 +44,23 @@
 
 /* Main container for task form */
 .task-form-container {
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
+    
   }
   
-  .task-form {
-    display: flex;
+    .task-form {
+   
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    background-color: #ffffff;
+    background-color: #2C3E50;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -68,13 +68,13 @@
     border-radius: 5px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-  }
+  }  
   
   .task-form h2 {
     text-align: center;
     font-size: 24px;
-    color: #4caf50;
-    margin-bottom: 10px;
+    color: #f1f5f1;
+    margin-bottom: 3px;
   }
   
     /* .task-input, .task-date, .task-priority {
@@ -94,22 +94,4 @@
     min-height: 100px;
   }
   
-  .add-task-button {
-    padding: 12px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-task-button:hover {
-    background-color: #45a049;
-  }
-  
-  .add-task-button:active {
-    background-color: #388e3c;
-  }
-  
+

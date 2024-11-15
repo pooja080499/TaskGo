@@ -1,4 +1,5 @@
 // TaskList.js
+// TaskList.js
 import React, { useState, useEffect } from 'react';
 import "../styles/TaskList.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +10,7 @@ function TaskList({ tasks, setTasks }) {
   const [editIndex, setEditIndex] = useState(null);
   const [editTask, setEditTask] = useState({ title: '', description: '', date: '', priority: '', status: '' });
 
-  // Run overdue check once on mount
+  // Check and update overdue tasks whenever tasks are updated
   useEffect(() => {
     const updatedTasks = tasks.map(task => {
       const dueDate = new Date(task.date);
@@ -17,14 +18,14 @@ function TaskList({ tasks, setTasks }) {
 
       // Mark as overdue if the task is pending and past due
       if (task.status === 'pending' && dueDate < currentDate) {
-        task.status = 'overdue';
+        return { ...task, status: 'overdue' };
       }
       return task;
     });
 
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks)); // Persist updated tasks
-  }, []);
+  }, [tasks, setTasks]);
 
   const markTaskComplete = (index) => {
     const updatedTasks = [...tasks];
@@ -72,48 +73,68 @@ function TaskList({ tasks, setTasks }) {
           {isEditing && editIndex === index ? (
             <div className="edit-form-container">
               <form className="edit-form" onSubmit={handleEditSubmit}>
-                <input
-                  type="text"
-                  name="title"
-                  value={editTask.title}
-                  onChange={handleEditChange}
-                  placeholder="Title"
-                  required
-                />
-                <textarea
-                  name="description"
-                  value={editTask.description}
-                  onChange={handleEditChange}
-                  placeholder="Description"
-                  required
-                />
-                <input
-                  type="date"
-                  name="date"
-                  value={editTask.date}
-                  onChange={handleEditChange}
-                  required
-                />
-                <select
-                  name="priority"
-                  value={editTask.priority}
-                  onChange={handleEditChange}
-                  required
-                >
-                  <option value="high">High</option>
-                  <option value="medium">Medium</option>
-                  <option value="low">Low</option>
-                </select>
-                <select
-                  name="status"
-                  value={editTask.status}
-                  onChange={handleEditChange}
-                  required
-                >
-                  <option value="pending">Pending</option>
-                  <option value="complete">Complete</option>
-                  <option value="overdue">Overdue</option>
-                </select>
+                <div className='label-style'>
+                  <label>Title:</label>
+                  <input
+                    type="text"
+                    name="title"
+                    value={editTask.title}
+                    onChange={handleEditChange}
+                    placeholder="Title"
+                    required
+                  />
+                </div>
+                
+                <div className='label-style'>
+                <label>Description:</label>
+                  <textarea
+                    name="description"
+                    value={editTask.description}
+                    onChange={handleEditChange}
+                    placeholder="Description"
+                    required
+                  />
+                </div>
+                
+                <div className='label-style'>
+                <label>Due Date:</label>
+                  <input
+                    type="date"
+                    name="date"
+                    value={editTask.date}
+                    onChange={handleEditChange}
+                    required
+                  />
+                </div>
+
+                <div className='label-style'>
+                <label>Priority:</label>
+                  <select
+                    name="priority"
+                    value={editTask.priority}
+                    onChange={handleEditChange}
+                    required
+                  >
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                </div>
+                
+                <div className='label-style'>
+                <label>Status:</label>
+                  <select
+                    name="status"
+                    value={editTask.status}
+                    onChange={handleEditChange}
+                    required
+                  >
+                    <option value="pending">Pending</option>
+                    <option value="complete">Complete</option>
+                    <option value="overdue">Overdue</option>
+                  </select>
+                </div>
+                
                 <div className="edit-form-buttons">
                   <button type="submit">Save Changes</button>
                   <button type="button" onClick={handleCancelEdit}>Cancel</button>
@@ -123,10 +144,22 @@ function TaskList({ tasks, setTasks }) {
           ) : (
             <div className="task-item-content">
               <div className="task-details">
-                <h3>Title: {task.title}</h3>
-                <p>Description: {task.description}</p>
-                <p>Due: {task.date}</p>
-                <p>Status: <strong>{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</strong></p>
+                  <div className="task-row">
+                    <span className="task-label">Title:</span>
+                    <span className="task-data">{task.title}</span>
+                  </div>
+                  <div className="task-row">
+                    <span className="task-label">Description:</span>
+                    <span className="task-data">{task.description}</span>
+                  </div>
+                  <div className="task-row">
+                    <span className="task-label">Due:</span>
+                    <span className="task-data">{task.date}</span>
+                  </div>
+                  <div className="task-row">
+                    <span className="task-label">Status:</span>
+                    <span className="task-data">{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</span>
+                  </div>
               </div>
               <div className="task-actions">
                 <button onClick={() => markTaskComplete(index)} disabled={task.status === 'complete'}>

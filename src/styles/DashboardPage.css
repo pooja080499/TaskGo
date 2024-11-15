@@ -84,7 +84,7 @@
   flex-direction: column;
 }
 
-.left-section .add-task-button {
+/* .left-section .add-task-button {
   padding: 12px 20px;
   font-size: 16px;
   background-color: #4CAF50;
@@ -98,9 +98,9 @@
 
 .left-section .add-task-button:hover {
   background-color: #45a049;
-}
+} */
 
-.left-section .filters {
+/* .left-section .filters {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -114,9 +114,9 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
-}
+} */
 
-.left-section .filters button:hover {
+/* .left-section .filters button:hover {
   background-color: #bbb;
 }
 
@@ -124,7 +124,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
+} */
 
 .left-section .task-form input,
 .left-section .task-form select,
@@ -167,30 +167,30 @@
   color: #7f8c8d;
 }
 
-.task-list {
+/* .task-list {
   flex-grow: 1;
   background-color: #fff;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-}
+} */
 
-.task-item {
+/* .task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e0e0e0;
   padding: 10px 0;
-}
+} */
 
 .task-item:last-child {
   border-bottom: none;
 }
 
-.task-item .task-details {
+/* .task-item .task-details {
   flex: 3;
-}
+} */
 
 .task-item h4 {
   margin: 0;
@@ -203,15 +203,16 @@
   color: #7f8c8d;
 }
 
-.task-item button {
+/* .task-item button {
+
   margin-left: 10px;
   padding: 5px 10px;
   font-size: 0.9rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.2s;
-}
+} */
 
 .task-item .complete-button {
   background-color: #2ECC71;
@@ -336,16 +337,16 @@
 .left-section .add-task-button {
   padding: 12px 20px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: #E74C3C;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
 .left-section .add-task-button:hover {
-  background-color: #45a049;
+  background-color: #d96f64;
 }
 
 /* Filter Section */

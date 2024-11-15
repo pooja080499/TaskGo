@@ -1,5 +1,6 @@
 /* General styling for the task list container */
 .task-list {
+  
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -8,12 +9,13 @@
 
 /* Task item styling */
 .task-item {
+   
+  justify-content: space-between;
   padding: 16px;
   margin: 12px 0;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
   transition: background-color 0.3s ease;
 }
 
@@ -30,29 +32,40 @@
   background-color: #e6ffe6;
 }
 
-/* Task item header styling */
-.task-item h3 {
-  margin: 0;
+/* Left section for task details */
+.task-details {
+ 
+  width: 70%;
+  color: #000; /* Set text color to black */
+}
+
+.task-details h3 {
+  margin: 0 0 8px;
   font-size: 20px;
   color: #333;
 }
 
-.task-item p {
-  margin: 8px 0;
-  color: #666;
+.task-details p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+} 
+
+.task-details b{
+  color: #636262;
+}
+
+/* Right section for task actions */
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 
 /* Button styling */
-.task-item .btn {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  gap: 10px; /* Add space between buttons */
-  align-items: flex-start; /* Align buttons to the left */
-  margin-top: 10px;
-}
-
-.task-item .btn button {
-  padding: 8px 16px;
+.task-actions button {
+  padding: 8px 10px;
   font-size: 14px;
   color: #fff;
   border: none;
@@ -61,37 +74,38 @@
   transition: background-color 0.3s ease;
 }
 
-.task-item .btn button:first-child {
+.task-actions button:first-child {
   background-color: #4CAF50; /* Green for Mark as Complete */
 }
 
-.task-item .btn button:nth-child(2) {
+.task-actions button:nth-child(2) {
   background-color: #007BFF; /* Blue for Edit */
 }
 
-.task-item .btn button:last-child {
+.task-actions button:last-child {
   background-color: #FF4136; /* Red for Delete */
 }
 
-.task-item .btn button:hover {
+.task-actions button:hover {
   opacity: 0.9;
 }
 
-/* Edit form styling (appears over the task item) */
+/* Edit form styling */
+.edit-form-container {
+  width: 100%;
+}
+
 .edit-form {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   padding: 16px;
   background-color: #f2f5f8;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
 }
 
-/* Form input fields */
-.edit-form input {
+.edit-form input,
+.edit-form textarea,
+.edit-form select {
   display: block;
   width: 90%;
   padding: 10px;
@@ -103,32 +117,9 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-.edit-form textarea {
-  display: block;
-  width: 90.1%;
-  padding: 10px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.edit-form select {
-  display: block;
-  width: 93%;
-  padding: 10px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Save and cancel button styling */
-.edit-form button {
+/* Save and Cancel button styling */
+.edit-form button[type="submit"],
+.edit-form button[type="button"] {
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -136,28 +127,62 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-right: 8px;
 }
 
-/* Save button */
 .edit-form button[type="submit"] {
   background-color: #4CAF50;
-  margin-right: 10px;
 }
 
-.edit-form button[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-/* Cancel button */
 .edit-form button[type="button"] {
   background-color: #FF4136;
 }
 
-.edit-form button[type="button"]:hover {
-  background-color: #e03a2d;
+.edit-form button:hover {
+  opacity: 0.9;
 }
 
-/* Task item content section */
-.task-item .task-item-content {
-  padding: 10px;
+.task-item-content{
+  display:flex;
+  justify-content: space-between;
+}
+
+
+/* Task details container styling */
+.task-details {
+  display: flex;
+  flex-direction: column;
+  color: #000; /* Set text color to black */
+}
+
+/* Each row in task details */
+.task-row {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-bottom: 8px;
+}
+
+/* Style for label column */
+.task-label {
+  font-weight: bold;
+  width: 20%; /* Adjust as needed */
+  text-align: left;
+}
+
+/* Style for data column */
+.task-data {
+  width: 60%; /* Adjust as needed */
+  text-align: left;
+  color: #7b7979;
+  font-weight: 500;
+}
+
+.label-style{
+  display: flex;
+}
+
+.label-style label{
+  font-weight: bold;
+  width: 20%; /* Adjust as needed */
+  text-align: left;
 }

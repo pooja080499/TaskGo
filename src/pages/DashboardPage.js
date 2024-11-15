@@ -63,7 +63,11 @@ function DashboardPage() {
             <div>Overdue: {overdueTasks}</div>
             <div>Completed: {completedTasks}</div>
           </div>
-          <TaskList tasks={filteredTasks} setTasks={setTasks} />
+          {filteredTasks.length > 0 ? (
+            <TaskList tasks={filteredTasks} setTasks={setTasks} />
+          ) : (
+            <p>No tasks found for the selected filters.</p>
+          )}
         </div>
 
         {/* Right Section */}
