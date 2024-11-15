@@ -21,7 +21,7 @@ function Header({ onSearch, onStatusFilterChange, onPriorityFilterChange, status
       <div className="left">
         {/* Use the imported image variable here */}
         <img src={profileImage} alt="Profile" className="profile" />
-        <span>TaskFlow</span>
+        <span>TaskGo</span>
       </div>
       <div className="search-bar">
         <input
@@ -42,9 +42,9 @@ function Header({ onSearch, onStatusFilterChange, onPriorityFilterChange, status
           onPriorityFilterChange={onPriorityFilterChange} 
         />
       </div>
-      <div className="right">
+      {/* <div className="right">
         <span>About</span> | <span>Help</span>
-      </div>
+      </div> */}
     </header>
   );
 }
