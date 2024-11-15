@@ -1,5 +1,3 @@
-// TaskList.js
-// TaskList.js
 import React, { useState, useEffect } from 'react';
 import "../styles/TaskList.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -35,7 +33,9 @@ function TaskList({ tasks, setTasks }) {
   };
 
   const deleteTask = (index) => {
+    console.log('Deleting task at index:', index);
     const updatedTasks = tasks.filter((_, i) => i !== index);
+    console.log('Tasks after deletion:', updatedTasks);
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks)); // Persist in localStorage
   };
@@ -53,6 +53,7 @@ function TaskList({ tasks, setTasks }) {
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
+    console.log(editTask);  // Log the updated task to verify
     const updatedTasks = [...tasks];
     updatedTasks[editIndex] = { ...editTask };
     setTasks(updatedTasks);
@@ -84,9 +85,8 @@ function TaskList({ tasks, setTasks }) {
                     required
                   />
                 </div>
-                
                 <div className='label-style'>
-                <label>Description:</label>
+                  <label>Description:</label>
                   <textarea
                     name="description"
                     value={editTask.description}
@@ -95,9 +95,8 @@ function TaskList({ tasks, setTasks }) {
                     required
                   />
                 </div>
-                
                 <div className='label-style'>
-                <label>Due Date:</label>
+                  <label>Due Date:</label>
                   <input
                     type="date"
                     name="date"
@@ -106,9 +105,8 @@ function TaskList({ tasks, setTasks }) {
                     required
                   />
                 </div>
-
                 <div className='label-style'>
-                <label>Priority:</label>
+                  <label>Priority:</label>
                   <select
                     name="priority"
                     value={editTask.priority}
@@ -120,9 +118,8 @@ function TaskList({ tasks, setTasks }) {
                     <option value="low">Low</option>
                   </select>
                 </div>
-                
                 <div className='label-style'>
-                <label>Status:</label>
+                  <label>Status:</label>
                   <select
                     name="status"
                     value={editTask.status}
@@ -134,7 +131,6 @@ function TaskList({ tasks, setTasks }) {
                     <option value="overdue">Overdue</option>
                   </select>
                 </div>
-                
                 <div className="edit-form-buttons">
                   <button type="submit">Save Changes</button>
                   <button type="button" onClick={handleCancelEdit}>Cancel</button>
@@ -144,22 +140,26 @@ function TaskList({ tasks, setTasks }) {
           ) : (
             <div className="task-item-content">
               <div className="task-details">
-                  <div className="task-row">
-                    <span className="task-label">Title:</span>
-                    <span className="task-data">{task.title}</span>
-                  </div>
-                  <div className="task-row">
-                    <span className="task-label">Description:</span>
-                    <span className="task-data">{task.description}</span>
-                  </div>
-                  <div className="task-row">
-                    <span className="task-label">Due:</span>
-                    <span className="task-data">{task.date}</span>
-                  </div>
-                  <div className="task-row">
-                    <span className="task-label">Status:</span>
-                    <span className="task-data">{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</span>
-                  </div>
+                <div className="task-row">
+                  <span className="task-label">Title:</span>
+                  <span className="task-data">{task.title}</span>
+                </div>
+                <div className="task-row">
+                  <span className="task-label">Description:</span>
+                  <span className="task-data">{task.description}</span>
+                </div>
+                <div className="task-row">
+                  <span className="task-label">Due:</span>
+                  <span className="task-data">{task.date}</span>
+                </div>
+                <div className="task-row">
+                  <span className="task-label">Priority:</span>
+                  <span className="task-data">{task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}</span>
+                </div>
+                <div className="task-row">
+                  <span className="task-label">Status:</span>
+                  <span className="task-data">{task.status.charAt(0).toUpperCase() + task.status.slice(1)}</span>
+                </div>
               </div>
               <div className="task-actions">
                 <button onClick={() => markTaskComplete(index)} disabled={task.status === 'complete'}>
